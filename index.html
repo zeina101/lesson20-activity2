@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <title>Math Functions in JavaScript</title>
+</head>
+
+<body>
+    <center>
+        <h1>Math Functions</h1>
+        <p>Enter a Number and Select the Math Operation;</p>
+
+        <input id = "number" type = "number" placeholder = "Enter a Number" />
+        
+        <br>
+        <br>
+
+        <select id="operation">
+            <option value="sqrt">Square Root</option>
+            <option value="abs">Absolute Value</option>
+            <option value="ceil">Ceiling</option>
+            <option value="floor">Floor</option>
+            <option value="Round">Round</option>
+            <option value="pow2">Power (Square)</option>
+            <option value="pow3">Power (Cube)</option>
+            </select>
+            <br>
+            <br>
+
+            <button onclick="calculate()">Calculate</button>
+
+            <p id="result"></p>
+
+            <script>
+                function calculate() {
+                    var num = parseFloat(document.getElementById("number").value;
+                    var operation = document.getElementById("operation").value;
+                
+                    if (isNaN(num)) {
+                        document.getElementById("result").innerText = "Please Enter a Valid Number.";
+                        return;
+
+                    }
+
+                    var operations = {
+
+                    sqrt: Math.sqrt(num),
+                    abs: Math.abs(num),
+                    ceil: Math.ceil(num),
+                    floor: Math.floor(num),
+                    round: Math.round(num),
+                    pow2:Math.pow(num, 2),
+                    pow3: Math.pow(num, 3)
+                    };
+
+                    document.getElementById("result").innerText = `Result: ${operations[operation]}`;
+
+
+
+                    }
+            
+            </script>
+
+
+    </center>
+</body>
+
+</html>
